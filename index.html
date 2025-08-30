@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Visitor</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+    }
+    .poem {
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="message" class="poem"></div>
+
+  <script>
+    function isNightTime() {
+      const hour = new Date().getHours();
+      return hour >= 23 || hour < 3;
+    }
+
+    const message = document.getElementById("message");
+
+    if (isNightTime()) {
+      message.innerHTML = `
+        <strong>The Visitor</strong><br /><br />
+        It’s not the bad days that I fear<br />
+        But when good fortune draws too near<br />
+        I’ll hear that dreaded knock on my door<br />
+        “Hello hello! It’s me from before”<br />
+        No matter how I ignore the door<br />
+        “My friend! It’s me from days of yore”
+      `;
+    } else {
+      message.innerHTML = `
+        <em>The door remains closed.</em><br /><br />
+        Come back between 11PM and 3AM.<br />
+        The visitor only knocks at night.
+      `;
+    }
+  </script>
+</body>
+</html>
